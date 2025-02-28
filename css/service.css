@@ -1,0 +1,76 @@
+
+.service_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service_container .box {
+    width: 250px; /* Adjust as needed */
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.box:hover {
+    width: 250px;
+    background-color: #000;
+    padding: 15px;
+    border-radius: 10px;
+   cursor: pointer;
+}
+
+
+.service_container .img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.service_container .detail-box h5 {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: bold;
+
+}
+.service_container .detail-box{
+    color: #333;
+}
+
+.service_container .detail-box:hover{
+    color:#00dbde;
+    cursor: pointer;
+
+}
+.service_container .detail-box p:hover{
+    color:#00dbde;
+    cursor: pointer;
+}
+.service_container .detail-box p {
+    font-size: 14px;
+    margin-top: 0;
+}
+
+/* Ensure the heading inside the section is visible */
+.heading_container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.service_section .service_container .box .img-box img {
+    width: 100%;
+}
+.layout_padding {
+    padding-top: 75px;
+    padding-bottom: 25px;
+}
+.sub_page .footer_bg {
+    background: none;
+    background-color: #041858;
+    padding-top: 10px;
+}

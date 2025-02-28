@@ -1,0 +1,105 @@
+
+ .about_section {
+     padding: 60px 0;
+ }
+.img-box img {
+    width: 100%;
+    border-radius: 10px;
+}
+.detail-box {
+    padding: 20px;
+}
+.heading_container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+.mission_section, .choose_us_section {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+.mission_section h3, .choose_us_section h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+.choose_us_points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.point {
+    font-size: 16px;
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 5px;
+    border-left: 4px solid #007bff;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+}
+.point span {
+    font-weight: bold;
+}
+.btn-primary {
+    margin-top: 15px;
+    background: #007bff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    background: #0056b3;
+}
+
+
+.service_container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.service_container .box {
+    width: 250px; /* Adjust as needed */
+    text-align: center;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.service_container .img-box img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px; /* Reduce space between image and content */
+}
+
+.service_container .detail-box h5 {
+    font-size: 18px;
+    margin: 5px 0;
+    font-weight: bold;
+    color: #333; /* Ensure heading is visible */
+}
+
+.service_container .detail-box p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 0;
+}
+
+/* Ensure the heading inside the section is visible */
+.heading_container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.service_section .service_container .box .img-box img {
+    width: 100%;
+}
