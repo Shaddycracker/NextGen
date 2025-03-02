@@ -12,7 +12,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>Seotech</title>
+  <title>NextGen Scale</title>
   <link rel="icon" type="image/png" href="images/services/NextGen.png">
   <!-- slider stylesheet -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.3/assets/owl.carousel.min.css" />
@@ -72,9 +72,7 @@
                   Call : +91 94527 08814
                 </span>
               </a>
-              <form class="form-inline">
-                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
-              </form>
+
             </div>
           </div>
         </nav>
@@ -170,15 +168,14 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-8 mx-auto">
-            <form>
+            <form id="whatsappForm">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="inputName4" placeholder="Name ">
+                  <input type="text" class="form-control" id="inputName4" placeholder="Name">
                 </div>
                 <div class="form-group col-md-6">
                   <input type="email" class="form-control" id="inputEmail4" placeholder="Email id">
                 </div>
-
               </div>
               <div class="form-row">
                 <div class="form-group col">
@@ -189,9 +186,34 @@
                 <input type="text" class="form-control" id="inputMessage" placeholder="Message">
               </div>
               <div class="d-flex justify-content-center">
-                <button type="submit" class="">Send</button>
+                <button type="submit">Chat on WhatsApp</button>
               </div>
             </form>
+
+            <script>
+              document.getElementById("whatsappForm").addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                let name = document.getElementById("inputName4").value.trim();
+                let email = document.getElementById("inputEmail4").value.trim();
+                let subject = document.getElementById("inputSubject4").value.trim();
+                let message = document.getElementById("inputMessage").value.trim();
+
+                if (!email) {
+                  alert("Please provide your email before proceeding.");
+                  return;
+                }
+
+                let whatsappMessage = `Hello, I am ${name}. Contact me on ${email}. I want ${subject}. ${message ? "Message: " + message : ""}`;
+                let whatsappLink = `https://wa.me/919452708814?text=${encodeURIComponent(whatsappMessage)}`;
+
+                window.open(whatsappLink, "_blank");
+                name.value="";
+                email.value="";
+                subject.value="";
+                message.value="";
+              });
+            </script>
           </div>
         </div>
       </div>
@@ -202,17 +224,16 @@
 
 
     <!-- info section -->
-    <section class="info_section layout_padding2">
+    <section class="info_section layout_padding2" data-aos="fade-up">
       <div class="container">
         <div class="row">
           <div class="col-md-3">
             <div class="info_logo">
               <h3>
-                Seotech
+                NextGen Scale
               </h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor indidunt ut labore et
-                dolore magna
+                Transforming Idea`s Into Digital Growth Solutions
               </p>
             </div>
           </div>
@@ -247,7 +268,7 @@
                   <img src="images/telephone-white.png" width="12px" alt="">
                 </div>
                 <p>
-                  +01 1234567890
+                  +91 96964 15586
                 </p>
               </a>
               <a href="">
@@ -255,7 +276,7 @@
                   <img src="images/envelope-white.png" width="18px" alt="">
                 </div>
                 <p>
-                  demo@gmail.com
+                  nextgenscale11@gmail.com
                 </p>
               </a>
             </div>
@@ -263,26 +284,15 @@
           <div class="col-md-3">
             <div class="info_form ">
               <h4>
-                NEWSLETTER
+                Social Connection
               </h4>
-              <form action="">
-                <input type="email" placeholder="Enter your email">
-                <button>
-                  Subscribe
-                </button>
-              </form>
+
               <div class="social_box">
-                <a href="">
-                  <img src="images/info-fb.png" alt="">
+                <a href="https://www.instagram.com/nextgen_scale/" target="_blank">
+                  <img src="images/instagram.png" alt="">
                 </a>
-                <a href="">
-                  <img src="images/info-twitter.png" alt="">
-                </a>
-                <a href="">
+                <a href="https://www.linkedin.com/company/nextgen-scale/" target="_blank">
                   <img src="images/info-linkedin.png" alt="">
-                </a>
-                <a href="">
-                  <img src="images/info-youtube.png" alt="">
                 </a>
               </div>
             </div>
@@ -320,6 +330,7 @@
         });
     });
 </script>
+
 
 </body>
 
