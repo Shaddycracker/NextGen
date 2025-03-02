@@ -52,12 +52,13 @@
     border-radius: 10px;
 }
 
-.feature-reverse {
-    flex-direction: row-reverse;
-}
+/*.feature-reverse {*/
+/*    flex-direction: row-reverse;*/
+/*}*/
 
 /* Feature Image */
 .feature-image img {
+    max-width: 250px;
     height: auto;
     border-radius: 10px;
 }
@@ -92,6 +93,7 @@
 /* Feature Content */
 .feature-content {
     text-align: left;
+    max-width: 400px;
 }
 
 .feature-content h3 {
