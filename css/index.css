@@ -1,105 +1,7 @@
-.chart-container {
-    margin-top: 20px;
-    position: relative;
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 50px;
-}
-
-.progress-line {
-    position: absolute;
-    left: 50%;
-    top: 0;
-    width: 5px;
-    background-color: #0c5460;
-    height: 100%;
-    background-size: 40px auto;
-    animation: wave-animation 2s linear infinite;
-}
-
-@keyframes wave-animation {
-    0% {
-        background-position-x: 0;
-    }
-    100% {
-        background-position-x: -40px;
-    }
-}
-
-.progress-item {
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 45%;
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-.progress-item:first-child {
-    margin-top: 20px;
-}
-.progress-item:last-child {
-    margin-bottom: 20px;
-}
-.progress-item:nth-child(odd) {
-    left: -15%;
-}
-
-.progress-item:nth-child(even) {
-    left: 15%;
-}
-
-.icon-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 15px;
-}
-
-.icon-box img {
-    width: 50px;
-    height: 50px;
-}
-
-.week-label {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.content h3 {
-    margin: 0;
-    font-size: 18px;
-    color: #333;
-}
-
-.content p {
-    font-size: 14px;
-    color: #666;
-}
-
-.dot1, .dot2, .dot3, .dot4 {
-    position: absolute;
-    left: calc(50% - 6px);
-    width: 12px;
-    height: 12px;
-    background-color: #0c5460;
-    border-radius: 50%;
-}
-
-.dot1 { top: -1%; }
-.dot2 { top: 35%; }
-.dot3 { top: 58%; }
-.dot4 { top: 99%; }
 
 .about_section {
-     padding: 60px 0;
- }
+    padding: 60px 0;
+}
 .img-box img {
     width: 100%;
     border-radius: 10px;
@@ -107,20 +9,17 @@
 .detail-box {
     padding: 20px;
 }
-.heading_container h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #333;
-}
-.mission_section, .choose_us_section {
+.choose_us_section,
+.mission_section {
     margin-top: 20px;
     padding: 15px;
     background: #f8f9fa;
     border-radius: 10px;
 }
-.mission_section h3, .choose_us_section h3 {
+.choose_us_section h3,
+.mission_section h3 {
     font-size: 24px;
-    font-weight: bold;
+    font-weight: 700;
     color: #007bff;
     margin-bottom: 10px;
 }
@@ -138,7 +37,7 @@
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
 }
 .point span {
-    font-weight: bold;
+    font-weight: 700;
 }
 .btn-primary {
     margin-top: 15px;
@@ -151,53 +50,4 @@
 }
 .btn-primary:hover {
     background: #0056b3;
-}
-
-
-.service_container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.service_container .box {
-    width: 250px; /* Adjust as needed */
-    text-align: center;
-    padding: 15px;
-    background: #fff;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-}
-
-.service_container .img-box img {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 10px; /* Reduce space between image and content */
-}
-
-.service_container .detail-box h5 {
-    font-size: 18px;
-    margin: 5px 0;
-    font-weight: bold;
-    color: #333; /* Ensure heading is visible */
-}
-
-.service_container .detail-box p {
-    font-size: 14px;
-    color: #666;
-    margin-top: 0;
-}
-
-/* Ensure the heading inside the section is visible */
-.heading_container h2 {
-    font-size: 32px;
-    font-weight: bold;
-    color: #222;
-    text-align: center;
-    margin-bottom: 10px;
-}
-.service_section .service_container .box .img-box img {
-    width: 100%;
 }

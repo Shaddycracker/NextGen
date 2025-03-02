@@ -1,5 +1,5 @@
 #services {
-    padding: 100px 0;
+    padding: 10px 0;
     background: linear-gradient(to right, #041858 0%, #2C3A8C 100%);
     color: #fff;
 }
@@ -9,15 +9,15 @@
 #services h2 {
     color: #fff;
 }
-#services .section-title h2::after {
-    position: absolute;
-    content: "";
-    background: rgba(255, 255, 255, 0.3);
-    height: 4px;
-    width: 60px;
-    bottom: 0;
-    margin-left: -30px;
-    left: 50%;
+.section-title{
+    padding: 20px;
+}
+.section-title h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
 }
 #services i.fa {
     font-size: 42px;
@@ -37,6 +37,57 @@
 #services p {
     color: rgba(255, 255, 255, 0.75);
 }
-#services .service-desc {
-    margin-bottom: 40px;
+
+.services_icons_box{
+    cursor: pointer;
+}
+#services i.fa:hover{
+    background: linear-gradient(to right, #fff 0%, #5ca9fb 100%);
+    color:#041858
+
+}
+.section-title .circle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px; /* Adjusted spacing */
+    transform: translateY(-50%);
+}
+
+.section-title .circle {
+    background-color: #d8bf36;
+    border-radius: 50%;
+    animation: wave 1.5s infinite ease-in-out;
+}
+
+.circle-container .circle {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    background: #d8bf36;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+.circle:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.circle:nth-child(3) {
+    animation-delay: 0.6s;
+}
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
