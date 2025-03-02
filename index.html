@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <!-- Basic -->
@@ -27,6 +27,7 @@
 <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>-->
 <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- AOS CSS -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 
@@ -41,6 +42,8 @@
     <!-- Custom Styling -->
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/indexService.css">
+    <link rel="stylesheet" href="css/indexProgress.css">
 </head>
 
 
@@ -184,9 +187,7 @@
         </div>
       </div>
     </section>
-    
-    
-    
+
     <!-- end slider section -->
   </div>
 
@@ -255,119 +256,135 @@
   </section>
 
 
-
-
-<!-- Custom Script for Toggle Effect -->
-
   <!-- end about section -->
 
 
   <!-- service section -->
-  <section class="service_section layout_padding" data-aos="fade-up">
+
+  <section id="services"  class="text-center service_section layout_padding" data-aos="fade-up">
     <div class="container">
-        <div class="heading_container">
-            <h2 style="color: white;">Our Services
-              <span class="circle-container">
-                <span class="circle"></span>
-                <span class="circle"></span>
-                <span class="circle"></span>
-              </span>
-            </h2>
+        <div class="section-title">
+            <h2 style="color: white;">Our Services</h2>
             <p>We provide cutting-edge digital solutions to help businesses scale and thrive in the online world.</p>
         </div>
 
-        <div class="service_container">
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/services/coding.png" alt="Website Development">
-                </div>
-                <div class="detail-box">
-                    <h5>Website Development</h5>
-                    <p>We build fast, responsive, and SEO-friendly websites tailored to your business needs.</p>
-                </div>
-            </div>
-
-
-
-            <div class="box">
-                <div class="img-box">
-                    <img src="images/services/social-media.png" alt="Social Media Handling">
-                </div>
-                <div class="detail-box">
-                    <h5>Social Media Handling</h5>
-                    <p>Maximize brand reach and engagement with professional social media management.</p>
-                </div>
-            </div>
-            <div class="box">
-              <div class="img-box">
-                  <img src="images/services/automation.png" alt="Business Automation">
-              </div>
-              <div class="detail-box">
-                  <h5>Business Automation</h5>
-                  <p>Automate repetitive tasks and streamline operations with AI-powered solutions.</p>
-              </div>
-          </div>
-
+        <div class="row" id="services-container">
         </div>
-        <div class="btn-box">
-          <a href="service.html">Read More</a>
+    </div>
+
+</section>
+  <script>
+      const services = [
+          {
+              icon: "fa fa-wordpress",
+              name: "Website Development",
+              text: "We build fast, responsive, and SEO-friendly websites tailored to your business needs."
+          },
+          {
+              icon: "fa fa-cart-arrow-down",
+              name: "Social Media Handling",
+              text: "Maximize brand reach and engagement with professional social media management."
+          },
+          {
+              icon: "fa fa-cloud-download",
+              name: "Business Automation",
+              text: "Automate repetitive tasks and streamline operations with AI-powered solutions."
+          },
+          {
+              icon: "fa fa-language",
+              name: "UI/UX Design",
+              text: "Crafting seamless and user-friendly digital experiences with innovative design strategies."
+          },
+          {
+              icon: "fa fa-plane",
+              name: "SEO Optimization",
+              text: "Boost search rankings with result-driven SEO strategies tailored for your business."
+          },
+          {
+              icon: "fa fa-pie-chart",
+              name: "Digital Marketing",
+              text: "End-to-end marketing strategies for online growth, lead generation, and brand awareness."
+          },
+          {
+              icon: "fa fa-pencil",
+              name: "Content Creation",
+              text: "Engaging and high-quality content to attract, inform, and convert your audience."
+          },
+          {
+              icon: "fa fa-video-camera",
+              name: "Video Editing",
+              text: "High-quality video content that enhances your brand’s storytelling and digital presence."
+          }
+      ];
+
+      const servicesContainer = document.getElementById("services-container");
+
+      servicesContainer.innerHTML = services.map(service => `
+    <div class="col-md-4">
+      <i class="${service.icon}"></i>
+      <div class="service-desc">
+        <h3>${service.name}</h3>
+        <p>${service.text}</p>
       </div>
     </div>
-</section>
-
-  <div class="chart-container">
-      <div class="progress-line">
-          <div class="dot1"></div>
-          <div class="dot2"></div>
-          <div class="dot3"></div>
-          <div class="dot4"></div>
-      </div>
-      <div class="progress-item">
-          <div class="icon-box">
-              <span class="week-label">Week 1</span>
-              <img src="./images/services/automation.png" alt="No">
-          </div>
-          <div class="content">
-              <h3>Task 1 Completed</h3>
-              <p>Details about Task 1 completion.</p>
-          </div>
-
+  `).join('');
+  </script>
+  <section class="text-center service_section layout_padding" style="background-color: white;color: black">
+      <div class="section-header">
+          <h2 class="section-title">Powerful Phase</h2>
+          <p class="section-subtitle">
+              Discover the capabilities that set our platform apart from the rest.
+          </p>
       </div>
 
-      <div class="progress-item">
-          <div class="icon-box">
-              <span class="week-label">Week 2</span>
-              <img src="./images/services/coding.png" alt="bug">
-          </div>
-          <div class="content">
-              <h3>Task 2 In Progress</h3>
-              <p>Details about Task 2 progress.</p>
-          </div>
+      <div class="features-container">
+          <div id="features-list"></div>
       </div>
+  </section>
 
-      <div class="progress-item">
-          <div class="icon-box">
-              <span class="week-label">Week 3</span>
-              <img src="./images/services/digitalmarketing.png" alt="bug">
-          </div>
-          <div class="content">
-              <h3>Task 3 Pending</h3>
-              <p>Details about Task 3 pending status.</p>
-          </div>
+  <script>
+      const features = [
+          {
+              title: "Phase One",
+              description: "Research, strategy development, and planning",
+              image: "https://assets.website-files.com/64080e2f7d2a307017bd5ef9/644e27652fb9ab2a1358b7dd_HIW%20Image%2003.svg"
+          },
+          {
+              title: "Phase Two",
+              description: "Design and development phase",
+              image: "https://assets.website-files.com/64080e2f7d2a307017bd5ef9/644e276544c5364e86998203_HIW%20Image%2004.svg"
+          },
+          {
+              title: "Phase Three",
+              description: "Testing, optimization, and final implementation",
+              image: "https://assets.website-files.com/64080e2f7d2a307017bd5ef9/644e27652fb9ab2a1358b7dd_HIW%20Image%2003.svg"
+          }
+      ];
 
-      </div>
+      const featuresList = document.getElementById("features-list");
 
-      <div class="progress-item">
-          <div class="icon-box">
-              <span class="week-label">Week 4</span>
-              <img src="./images/services/seo.png" alt="bug">
-          </div>
-          <div class="content">
-              <h3>Task 4 Pending</h3>
-              <p>Details about Task 4 pending status.</p>
-          </div>
-      </div>
-  </div>
+      features.forEach((feature, index) => {
+          const featureElement = document.createElement("div");
+          featureElement.className = `feature ${index % 2 === 0 ? "feature-reverse" : ""}`;
+
+          featureElement.innerHTML = `
+                <div class="feature-image">
+                    <img src="${feature.image}" alt="Feature Image">
+                </div>
+                <div class="feature-line">
+                    <div class="line"></div>
+                    <div class="circle">${index + 1}</div>
+                    <div class="line"></div>
+                </div>
+                <div class="feature-content">
+                    <h3>${feature.title}</h3>
+                    <p>${feature.description}</p>
+                </div>
+            `;
+
+          featuresList.appendChild(featureElement);
+      });
+  </script>
 
   <!-- end work section -->
 
@@ -562,6 +579,7 @@
     once: true, // Animates only once
   });
 </script>
+
 
 </body>
 
