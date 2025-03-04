@@ -23,6 +23,9 @@
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
   <!-- Add Bootstrap for Collapsible Effect -->
 <!-- Bootstrap & jQuery -->
+    <!-- Bootstrap CSS & JS (if not already included) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <!--<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">-->
 <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>-->
@@ -261,82 +264,82 @@
 
 
   <!-- service section -->
+  <section id="services" class="text-center service_section layout_padding" data-aos="fade-up">
+      <div class="container">
+          <div class="section-title">
+              <h2 style="color: white;">
+                  Our Services
+                  <span class="circle-container">
+                  <span class="circle"></span>
+                  <span class="circle"></span>
+                  <span class="circle"></span>
+                </span>
+              </h2>
+              <p>We provide cutting-edge digital solutions to help businesses scale and thrive in the online world.</p>
+          </div>
 
-  <section id="services"  class="text-center service_section layout_padding" data-aos="fade-up">
-    <div class="container">
-        <div class="section-title">
-            <h2 style="color: white;">
-                Our Services
-                <span class="circle-container">
-              <span class="circle"></span>
-              <span class="circle"></span>
-              <span class="circle"></span>
-            </span>
-            </h2>
-            <p>We provide cutting-edge digital solutions to help businesses scale and thrive in the online world.</p>
-        </div>
+          <!-- Bootstrap Carousel -->
+          <div id="servicesCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner" id="carousel-content">
+                  <!-- Services will be inserted dynamically -->
+              </div>
 
-        <div class="row" id="services-container">
-        </div>
-    </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#servicesCarousel" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#servicesCarousel" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+              </button>
+          </div>
+      </div>
+  </section>
 
-</section>
   <script>
       const services = [
-          {
-              icon: "fa fa-wordpress",
-              name: "Website Development",
-              text: "We build fast, responsive, and SEO-friendly websites tailored to your business needs."
-          },
-          {
-              icon: "fa fa-cart-arrow-down",
-              name: "Social Media Handling",
-              text: "Maximize brand reach and engagement with professional social media management."
-          },
-          {
-              icon: "fa fa-cloud-download",
-              name: "Business Automation",
-              text: "Automate repetitive tasks and streamline operations with AI-powered solutions."
-          },
-          // {
-          //     icon: "fa fa-language",
-          //     name: "UI/UX Design",
-          //     text: "Crafting seamless and user-friendly digital experiences with innovative design strategies."
-          // },
-          // {
-          //     icon: "fa fa-plane",
-          //     name: "SEO Optimization",
-          //     text: "Boost search rankings with result-driven SEO strategies tailored for your business."
-          // },
-          // {
-          //     icon: "fa fa-pie-chart",
-          //     name: "Digital Marketing",
-          //     text: "End-to-end marketing strategies for online growth, lead generation, and brand awareness."
-          // },
-          // {
-          //     icon: "fa fa-pencil",
-          //     name: "Content Creation",
-          //     text: "Engaging and high-quality content to attract, inform, and convert your audience."
-          // },
-          // {
-          //     icon: "fa fa-video-camera",
-          //     name: "Video Editing",
-          //     text: "High-quality video content that enhances your brand’s storytelling and digital presence."
-          // }
+          { icon: "fa fa-wordpress", name: "Website Development", text: "We build fast, responsive, and SEO-friendly websites tailored to your business needs." },
+          { icon: "fa fa-cart-arrow-down", name: "Social Media Handling", text: "Maximize brand reach and engagement with professional social media management." },
+          { icon: "fa fa-cloud-download", name: "Business Automation", text: "Automate repetitive tasks and streamline operations with AI-powered solutions." },
+          { icon: "fa fa-language", name: "UI/UX Design", text: "Crafting seamless and user-friendly digital experiences with innovative design strategies." },
+          { icon: "fa fa-plane", name: "SEO Optimization", text: "Boost search rankings with result-driven SEO strategies tailored for your business." },
+          { icon: "fa fa-pie-chart", name: "Digital Marketing", text: "End-to-end marketing strategies for online growth, lead generation, and brand awareness." },
+          { icon: "fa fa-pencil", name: "Content Creation", text: "Engaging and high-quality content to attract, inform, and convert your audience." },
+          { icon: "fa fa-video-camera", name: "Video Editing", text: "High-quality video content that enhances your brand’s storytelling and digital presence." },
+          { icon: "fa fa-mobile", name: "App Development", text: "Custom mobile applications that enhance user experiences and drive engagement." }
       ];
 
-      const servicesContainer = document.getElementById("services-container");
+      const carouselContent = document.getElementById("carousel-content");
+      let carouselItems = '';
 
-      servicesContainer.innerHTML = services.map(service => `
-    <div class="col-md-4 services_icons_box" >
-      <i class="${service.icon}"></i>
-      <div class="service-desc">
-        <h3>${service.name}</h3>
-        <p>${service.text}</p>
-      </div>
-    </div>
-  `).join('');
+      function getColumnClass() {
+          return window.innerWidth < 768 ? 'col-12' : 'col-md-4';
+      }
+
+      for (let i = 0; i < services.length; i += window.innerWidth < 768 ? 1 : 3) {
+          let activeClass = i === 0 ? "active" : "";
+          carouselItems += `
+            <div class="carousel-item ${activeClass}">
+                <div class="row">
+                    ${services.slice(i, i + (window.innerWidth < 768 ? 1 : 3)).map(service => `
+                        <div class="${getColumnClass()} text-center">
+                            <i class="${service.icon}"></i>
+                            <div class="service-desc">
+                                <h3>${service.name}</h3>
+                                <p>${service.text}</p>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `;
+      }
+
+      carouselContent.innerHTML = carouselItems;
+
+      window.addEventListener("resize", () => location.reload()); // Refresh on resize to update column count
   </script>
+
   <section class="text-center service_section layout_padding" style="background-color: white;color: black">
       <div class="section-header">
           <h2 class="section-title">Powerful Phase</h2>
